@@ -1,12 +1,9 @@
-# Nuxt Cookie Control
-![Nuxt Cookie Control](https://drive.google.com/a/broj42.com/uc?id=1FGQVyj2s0OT-gpTYxH_FuQhe6oU9iejW)
-#### 
-Try it out here:
-[Nuxt.js Cookie Control](https://codesandbox.io/s/vkwqmm577)
+Based on https://gitlab.com/broj42/nuxt-cookie-control
 
-## 🚀 Usage
+
+## Basic Usage
 ```bash
-npm i nuxt-cookie-control
+npm i nuxt-cookie-wh
 ```
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
@@ -15,11 +12,11 @@ npm i nuxt-cookie-control
 ```javascript
 //nuxt.config.js
 modules: [
-  'nuxt-cookie-control'
+  'nuxt-cookie-wh'
 ]
 //or
 modules: [
-  ['nuxt-cookie-control', {
+  ['nuxt-cookie-wh', {
     //your options
   }]
 ]
@@ -86,7 +83,7 @@ this.$cookies.modal = true
 Options in nuxt.config.js
 ```javascript
 modules: [
-  ['nuxt-cookie-control', {
+  ['nuxt-cookie-wh', {
     //default css (true)
     //if css is set to false, you will still be able to access
     //your color variables (example. background-color: var(--cookie-control-barBackground))
@@ -171,13 +168,13 @@ modules: [
 without options (Simple)
 ```javascript
 modules: [
-'nuxt-cookie-control'
+'nuxt-cookie-wh'
 ]
 ```
 ### Cookies
 ```javascript
 modules: [
-'nuxt-cookie-control'
+'nuxt-cookie-wh'
 ]
 ...
 ...
@@ -265,17 +262,3 @@ text: {
   barTitle: 'Override Title'
 }
 ```
-
-### Buy me a coffee
-[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F1F31MWWL)
-
-
-<!-- Badges -->
-[npm-version-src]: https://badgen.net/npm/v/nuxt-cookie-control/latest
-[npm-version-href]: https://npmjs.com/package/nuxt-cookie-control
-
-[kofi-src]: https://badgen.net/badge/icon/kofi?icon=kofi&label=support
-[kofi-href]: https://ko-fi.com/darioferderber
-
-[npm-downloads-src]: https://badgen.net/npm/dm/nuxt-cookie-control
-[npm-downloads-href]: https://npmjs.com/package/nuxt-cookie-control

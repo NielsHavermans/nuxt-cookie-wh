@@ -1,44 +1,15 @@
 {
-  "_from": "nuxt-cookie-control",
-  "_id": "nuxt-cookie-control@1.9.7",
-  "_inBundle": false,
-  "_integrity": "sha512-YLELGGZgtRPmDfG5y2TxHehk+uN4eRIRWefFxIHoPUcUNV2P67hc2twrBxGGhYeMiPUQ8A3qeMzfdc7Q0kFiHQ==",
-  "_location": "/nuxt-cookie-control",
-  "_phantomChildren": {
-    "clone-deep": "4.0.1",
-    "loader-utils": "1.4.0",
-    "neo-async": "2.6.2",
-    "pify": "4.0.1"
-  },
-  "_requested": {
-    "type": "tag",
-    "registry": true,
-    "raw": "nuxt-cookie-control",
-    "name": "nuxt-cookie-control",
-    "escapedName": "nuxt-cookie-control",
-    "rawSpec": "",
-    "saveSpec": null,
-    "fetchSpec": "latest"
-  },
-  "_requiredBy": [
-    "#USER",
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/nuxt-cookie-control/-/nuxt-cookie-control-1.9.7.tgz",
-  "_shasum": "33053fc5b1bf7f4d9c8dce6d7848c04d8df23961",
-  "_spec": "nuxt-cookie-control",
-  "_where": "E:\\xampp\\htdocs\\woonhome\\woonhome-nl\\frontend",
   "author": {
-    "name": "Dario Ferderber",
-    "email": "dario.ferderber@broj42.com"
+    "name": "NielsHavermans",
+    "email": "nielshavermans@gmail.com"
   },
   "bugs": {
-    "url": "https://gitlab.com/broj42/nuxt-cookie-control/issues"
+    "url": "https://github.com/NielsHavermans/nuxt-cookie-wh/issues"
   },
   "bundleDependencies": false,
   "contributors": [
     {
-      "name": "Davor Teskera"
+      "name": "broj24"
     }
   ],
   "dependencies": {
@@ -48,7 +19,7 @@
     "string-replace-loader": "^2.1.1"
   },
   "deprecated": false,
-  "description": "Nuxt Cookies Control Module",
+  "description": "Nuxt Cookies Control Module Woonhome",
   "eslintIgnore": [
     "*"
   ],
@@ -57,22 +28,20 @@
     "components",
     "locale"
   ],
-  "homepage": "https://gitlab.com/broj42/nuxt-cookie-control#readme",
+  "homepage": "https://github.com/NielsHavermans/nuxt-cookie-wh",
   "keywords": [
-    "nuxt cookie control",
-    "nuxt gdpr",
-    "nuxt cookie consent",
-    "nuxt gdpr consent"
+    "nuxt cookie control based",
+    "nuxt cookie wh"
   ],
   "license": "MIT",
   "main": "lib/module.js",
-  "name": "nuxt-cookie-control",
+  "name": "nuxt-cookie-wh",
   "publishConfig": {
     "access": "public"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://gitlab.com/broj42/nuxt-cookie-control.git"
+    "url": "git@github.com:NielsHavermans/nuxt-cookie-wh.git"
   },
   "scripts": {
     "postinstall": "node lib/postinstall.js"
