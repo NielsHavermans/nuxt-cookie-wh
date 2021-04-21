@@ -39,22 +39,12 @@
                       <input v-else :id="getCookieFirstName(cookie.name)" type="checkbox" :checked="cookies.enabledList.includes(cookie.identifier || cookies.slugify(getCookieFirstName(cookie.name))) || (cookies.get('cookie_control_consent').length === 0 && cookie.initialState === true)" @change="toogleCookie(cookie)"/>
                       <label :for="getCookieFirstName(cookie.name)" v-html="getName(cookie.name)"/>                      
                     </div>
-                    <!--<template v-if="cookie.cookies">
-                      <slot name="cookie" v-bind="{config: cookie}">
-                        <ul>
-                          <li v-for="item in cookie.cookies" :key="item.id" v-html="item"/>
-                        </ul>
-                      </slot>
-                    </template>-->
                   </li>
                 </ul>
               </template>
               <div class="cookieControl__ModalButtons">
                 <a @click="setConsent({type: 'partial'})" class="btntransp noimg"><span>{{cookies.text.save}}</span></a>
                 <a @click="setConsent" class="btnblue"><span>{{cookies.text.acceptAll}}</span> <div class="img"></div></a>
-                <!--<button @click="setConsent({type: 'partial'})" v-text="cookies.text.save"/>
-                <button @click="setConsent" v-text="cookies.text.acceptAll"/>
-                <button @click="setConsent({declineAll: true})" v-text="cookies.text.declineAll"/>-->
               </div>
             </div>
           </div>
@@ -69,7 +59,7 @@ export default {
   name: 'CookieControl',
   props: {
     locale: {
-      default: 'en'
+      default: 'nl'
     }
   },
   data(){

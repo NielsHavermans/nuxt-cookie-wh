@@ -3,7 +3,7 @@ Based on https://gitlab.com/broj42/nuxt-cookie-control
 
 ## Basic Usage
 ```bash
-npm i nuxt-cookie-wh
+npm install nielshavermans/nuxt-cookie-wh
 ```
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
