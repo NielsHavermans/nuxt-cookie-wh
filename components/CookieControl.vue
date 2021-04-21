@@ -11,7 +11,7 @@
               </slot>
             </div>
             <div class="cookieControl__BarButtons">
-              <a @click="setConsent({reload: true})" class="btnblue"><span>{{cookies.text.acceptAll}}</span> <div class="img"></div></a>
+              <a href="#" @click="setConsent({reload: true})" class="btnblue"><span>{{cookies.text.acceptAll}}</span> <div class="img"></div></a>
             </div>
           </div>
         </div>
@@ -43,8 +43,8 @@
                 </ul>
               </template>
               <div class="cookieControl__ModalButtons">
-                <a @click="setConsent({type: 'partial'})" class="btntransp noimg"><span>{{cookies.text.save}}</span></a>
-                <a @click="setConsent({reload: true})" class="btnblue"><span>{{cookies.text.acceptAll}}</span> <div class="img"></div></a>
+                <a href="#" @click="setConsent({type: 'partial'})" class="btntransp noimg"><span>{{cookies.text.save}}</span></a>
+                <a href="#" @click="setConsent({reload: true})" class="btnblue"><span>{{cookies.text.acceptAll}}</span> <div class="img"></div></a>
               </div>
             </div>
           </div>
