@@ -59,7 +59,7 @@ export default {
   name: 'CookieControl',
   props: {
     locale: {
-      default: 'nl'
+      default: 'en'
     }
   },
   data(){
