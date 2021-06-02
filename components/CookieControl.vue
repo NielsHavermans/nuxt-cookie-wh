@@ -54,7 +54,7 @@
               </template>
               <div class="cookieControl__ModalButtons">
                 <a href="#" @click="setConsent({type: 'partial', reload: true})" class="btntransp noimg"><span>{{cookies.text.save}}</span></a>
-                <a href="#" @click="setConsent({reload: true})" class="btnblue"><span>{{cookies.text.acceptAll}}</span> <div class="img"></div></a>
+                <a href="#" @click="setConsent({reload: true, acceptAll: true})" class="btnblue"><span>{{cookies.text.acceptAll}}</span> <div class="img"></div></a>
               </div>
             </div>
           </div>
@@ -101,31 +101,41 @@ export default {
       else this.cookies.enabledList.splice(this.cookies.enabledList.indexOf(cookieName), 1);
     },
 
-    setConsent({type, consent=true, reload=true, declineAll=false}){
+    setConsent({type, consent=true, reload=true, declineAll=false, acceptAll=false}){
 	  const value = $("input[name='item2']:checked").val();
-	  if (value === '0') {
-	    this.showError = true;
-	  } else if (value === '-1') { 
-		this.showError = false;
-		this.cookies.set({name: 'cookie_control_consent', value: consent, expires: this.expirationDate});
-        let enabledCookies = declineAll ? [] : type === 'partial' && consent ? this.cookies.enabledList : [...this.optionalCookies.map(c => c.identifier || this.cookies.slugify(this.getCookieFirstName(c.name)))];
-        this.cookies.set({name: 'cookie_control_enabled_cookies', value: consent ? enabledCookies.join(',') : '', expires: this.expirationDate});
-        if(!reload){
-          this.cookies.setConsent()
+	  if (typeof value === "undefined" || acceptAll === true) {
+		  this.showError = false;
+		  this.cookies.set({name: 'cookie_control_consent', value: consent, expires: this.expirationDate});
+          let enabledCookies = declineAll ? [] : type === 'partial' && consent ? this.cookies.enabledList : [...this.optionalCookies.map(c => c.identifier || this.cookies.slugify(this.getCookieFirstName(c.name)))];
+          this.cookies.set({name: 'cookie_control_enabled_cookies', value: consent ? enabledCookies.join(',') : '', expires: this.expirationDate});
+		  this.cookies.setConsent()
           this.$cookies.modal = false;
-        } else {
           window.location.reload(true);
-        }
-	  } else if (value === '1') {
-		this.showError = false;
-        this.cookies.set({name: 'cookie_control_consent', value: consent, expires: this.expirationDate});
-        let enabledCookies = declineAll ? [] : type === 'partial' && consent ? this.cookies.enabledList : [...this.optionalCookies.map(c => c.identifier || this.cookies.slugify(this.getCookieFirstName(c.name)))];
-        this.cookies.set({name: 'cookie_control_enabled_cookies', value: consent ? enabledCookies.join(',') : '', expires: this.expirationDate});
-        if(!reload){
-          this.cookies.setConsent()
-          this.$cookies.modal = false;
-        } else {
-          window.location.reload(true);
+	  } else {
+	    if (value === '0') {
+	      this.showError = true;
+	    } else if (value === '-1') { 
+	      this.showError = false;
+	      this.cookies.set({name: 'cookie_control_consent', value: consent, expires: this.expirationDate});
+          let enabledCookies = declineAll ? [] : type === 'partial' && consent ? this.cookies.enabledList : [...this.optionalCookies.map(c => c.identifier || this.cookies.slugify(this.getCookieFirstName(c.name)))];
+          this.cookies.set({name: 'cookie_control_enabled_cookies', value: consent ? enabledCookies.join(',') : '', expires: this.expirationDate});
+          if(!reload){
+            this.cookies.setConsent()
+            this.$cookies.modal = false;
+          } else {
+            window.location.reload(true);
+          }
+	    } else if (value === '1') {
+	      this.showError = false;
+          this.cookies.set({name: 'cookie_control_consent', value: consent, expires: this.expirationDate});
+          let enabledCookies = declineAll ? [] : type === 'partial' && consent ? this.cookies.enabledList : [...this.optionalCookies.map(c => c.identifier || this.cookies.slugify(this.getCookieFirstName(c.name)))];
+          this.cookies.set({name: 'cookie_control_enabled_cookies', value: consent ? enabledCookies.join(',') : '', expires: this.expirationDate});
+          if(!reload){
+            this.cookies.setConsent()
+            this.$cookies.modal = false;
+          } else {
+            window.location.reload(true);
+          }
         }
       }
     },
