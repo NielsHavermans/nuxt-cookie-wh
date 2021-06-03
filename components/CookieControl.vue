@@ -7,7 +7,7 @@
             <div>
               <slot name="bar">
                 <h3 v-text="cookies.text.barTitle"/>
-                <p>Om je makkelijker en persoonlijker te helpen, gebruiken wij cookies. Als je op accepteren klikt, geef je aan dat je dat goed vindt. Je kunt ook je <a href="#" @click="cookies.modal = true">voorkeuren aanpassen</a>. Meer weten? <a href="https://woonhome.nl/p/cookies/" target="_blank" id="cn-more-info">Bekijk onze cookiepagina</a>.</p>
+                <p>Om je beter en persoonlijker te helpen, gebruiken we cookies. Klik op accepteren om aan te geven dat je dat goed vindt. Je kunt ook je <a href="#" @click="cookies.modal = true">voorkeuren aanpassen</a>. Meer weten? <a href="https://woonhome.nl/p/cookies/" target="_blank" id="cn-more-info">Bekijk onze cookiepagina</a>.</p>
               </slot>
             </div>
             <div class="cookieControl__BarButtons">
