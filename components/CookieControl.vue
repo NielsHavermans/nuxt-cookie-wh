@@ -7,11 +7,11 @@
             <div>
               <slot name="bar">
                 <h3 v-text="cookies.text.barTitle"/>
-                <p>Om je beter en persoonlijker te helpen, gebruiken we cookies. Klik op accepteren om aan te geven dat je dat goed vindt. Je kunt ook je <a href="#" @click="cookies.modal = true">voorkeuren aanpassen</a>. Meer weten? <a href="https://woonhome.nl/p/cookies/" target="_blank" id="cn-more-info">Bekijk onze cookiepagina</a>.</p>
+                <p>Om je goed te helpen, gebruiken we cookies. Klik op accepteren om aan te geven dat je dat prima vindt. Je kunt ook je <a href="#" @click="cookies.modal = true">voorkeuren aanpassen</a>. Meer weten? <a href="https://woonhome.nl/p/cookies/" target="_blank" id="cn-more-info">Bekijk onze cookiepagina</a>.</p>
               </slot>
             </div>
             <div class="cookieControl__BarButtons">
-              <a href="#" @click="setConsent({reload: true})" class="btnblue"><span>{{cookies.text.acceptAll}}</span> <div class="img"></div></a>
+              <a href="#" @click="setConsent({reload: true})" style="width: 147px !important;" class="btnblue"><span>{{cookies.text.acceptAll}}</span> <div class="img"></div></a>
             </div>
           </div>
         </div>
@@ -41,12 +41,12 @@
                           <input type="radio" id="item2-state-off" name="item2" value="-1" @change="toogleCookie(cookie, false)">
                           <input type="radio" id="item2-state-null" name="item2" value="0" checked @change="toogleCookie(cookie, false)">
                           <input type="radio" id="item2-state-on" name="item2" value="1" @change="toogleCookie(cookie, true)">                      
-	                      <i></i>
-	                      <label for="item2-state-null">-</label>
-						  <label for="item2-state-on">on</label>
-						  <label for="item2-state-off">off</label>
-					  </span>  
-					  <div v-if="type !== 'necessary'" class="error" :class="[showError ? 'show' : '']">Maak een keuze</div>                                      
+                        <i></i>
+                        <label for="item2-state-null">-</label>
+              <label for="item2-state-on">on</label>
+              <label for="item2-state-off">off</label>
+            </span>  
+            <div v-if="type !== 'necessary'" class="error" :class="[showError ? 'show' : '']">Maak een keuze</div>                                      
                     </div>
                      
                   </li>
@@ -102,21 +102,21 @@ export default {
     },
 
     setConsent({type, consent=true, reload=true, declineAll=false, acceptAll=false}){
-	  const value = $("input[name='item2']:checked").val();
-	  if (typeof value === "undefined" || acceptAll === true) {
-		  this.showError = false;
-		  this.cookies.set({name: 'cookie_control_consent', value: consent, expires: this.expirationDate});
+    const value = $("input[name='item2']:checked").val();
+    if (typeof value === "undefined" || acceptAll === true) {
+      this.showError = false;
+      this.cookies.set({name: 'cookie_control_consent', value: consent, expires: this.expirationDate});
           let enabledCookies = declineAll ? [] : type === 'partial' && consent ? this.cookies.enabledList : [...this.optionalCookies.map(c => c.identifier || this.cookies.slugify(this.getCookieFirstName(c.name)))];
           this.cookies.set({name: 'cookie_control_enabled_cookies', value: consent ? enabledCookies.join(',') : '', expires: this.expirationDate});
-		  this.cookies.setConsent()
+      this.cookies.setConsent()
           this.$cookies.modal = false;
           window.location.reload(true);
-	  } else {
-	    if (value === '0') {
-	      this.showError = true;
-	    } else if (value === '-1') { 
-	      this.showError = false;
-	      this.cookies.set({name: 'cookie_control_consent', value: consent, expires: this.expirationDate});
+    } else {
+      if (value === '0') {
+        this.showError = true;
+      } else if (value === '-1') { 
+        this.showError = false;
+        this.cookies.set({name: 'cookie_control_consent', value: consent, expires: this.expirationDate});
           let enabledCookies = declineAll ? [] : type === 'partial' && consent ? this.cookies.enabledList : [...this.optionalCookies.map(c => c.identifier || this.cookies.slugify(this.getCookieFirstName(c.name)))];
           this.cookies.set({name: 'cookie_control_enabled_cookies', value: consent ? enabledCookies.join(',') : '', expires: this.expirationDate});
           if(!reload){
@@ -125,8 +125,8 @@ export default {
           } else {
             window.location.reload(true);
           }
-	    } else if (value === '1') {
-	      this.showError = false;
+      } else if (value === '1') {
+        this.showError = false;
           this.cookies.set({name: 'cookie_control_consent', value: consent, expires: this.expirationDate});
           let enabledCookies = declineAll ? [] : type === 'partial' && consent ? this.cookies.enabledList : [...this.optionalCookies.map(c => c.identifier || this.cookies.slugify(this.getCookieFirstName(c.name)))];
           this.cookies.set({name: 'cookie_control_enabled_cookies', value: consent ? enabledCookies.join(',') : '', expires: this.expirationDate});
