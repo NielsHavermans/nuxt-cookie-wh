@@ -11,7 +11,7 @@
               </slot>
             </div>
             <div class="cookieControl__BarButtons">
-              <a href="#" @click="setConsent({reload: true})" style="width: 147px !important;" class="btnblue"><span>{{cookies.text.acceptAll}}</span> <div class="img"></div></a>
+              <a href="#" @click="setConsent({reload: true})" style="width: 220px !important;" class="btnblue"><span>{{cookies.text.acceptAll}}</span> <div class="img"></div></a>
             </div>
           </div>
         </div>
